@@ -1,0 +1,37 @@
+Schema with relationships
+
+departments
+-----------
+dept_no varchar(255) PK FK >- dept_emp.dept_no
+dept_name varchar(255)
+
+dept_emp
+---------
+emp_no int(55) Pk FK >- dept_manager.emp_no
+dept_no varchar(255) FK >- dept_manager.dept_no
+
+dept_manager
+------------
+dept_no varchar(255) FK >- employees.emp_no
+emp_no  int(55) FK >- employees.emp_no
+
+employees
+----------
+emp_no int(55) FK >- salaries.emp_no
+emp_title_id varchar(255) Pk FK >- titles.title_id
+birth_date date
+first_name varchar(255)
+last_name varchar(255)
+sex varchar(5)
+hire_date date 
+
+salaries
+---------
+emp_no int(55)
+salary int(55)
+
+titles
+-------
+title_id varchar(255) Pk
+title varchar(255)
+
